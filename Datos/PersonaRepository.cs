@@ -19,17 +19,17 @@ namespace Datos
             using (var command = _connection.CreateCommand())
             {
                 command.CommandText = @"Insert Into Persona (Identificacion,Nombre,Apellidos,Sexo,Edad,Departamento,Ciudad,ValorDeApoyo,ModalidadDeApoyo,Fecha) 
-                                        values (@Identificacion,@Nombre,@Apellidos,@Sexo,@Edad,@Departamento,@Ciudad,@ValorDeApoyo,@ModalidadDeApoyo,@Fecha";
-                command.Parameters.AddWithValue("@Identificacion", persona.identificacion);
-                command.Parameters.AddWithValue("@Nombre", persona.nombre);
-                command.Parameters.AddWithValue("@Appelidos", persona.apellidos);
-                command.Parameters.AddWithValue("@Sexo", persona.sexo);
-                command.Parameters.AddWithValue("@Edad", persona.edad);
-                command.Parameters.AddWithValue("@Departamento", persona.departamento);
-                command.Parameters.AddWithValue("@Ciudad", persona.ciudad);
-                command.Parameters.AddWithValue("@ValorDeApoyo", persona.valorDeApoyo);
-                command.Parameters.AddWithValue("@ModalidadDeApoyo", persona.modalidadDeApoyo);
-                command.Parameters.AddWithValue("@Fecha", persona.fecha);
+                                        values (@Identificacion,@Nombre,@Apellidos,@Sexo,@Edad,@Departamento,@Ciudad,@ValorDeApoyo,@ModalidadDeApoyo,@Fecha)";
+                command.Parameters.AddWithValue("@Identificacion", persona.Identificacion);
+                command.Parameters.AddWithValue("@Nombre", persona.Nombre);
+                command.Parameters.AddWithValue("@Apellidos", persona.Apellidos);
+                command.Parameters.AddWithValue("@Sexo", persona.Sexo);
+                command.Parameters.AddWithValue("@Edad", persona.Edad);
+                command.Parameters.AddWithValue("@Departamento", persona.Departamento);
+                command.Parameters.AddWithValue("@Ciudad", persona.Ciudad);
+                command.Parameters.AddWithValue("@ValorDeApoyo", persona.ValorDeApoyo);
+                command.Parameters.AddWithValue("@ModalidadDeApoyo", persona.ModalidadDeApoyo);
+                command.Parameters.AddWithValue("@Fecha", persona.Fecha);
 
                 
                 var filas = command.ExecuteNonQuery();
@@ -70,10 +70,10 @@ namespace Datos
         {
             if(!dataReader.HasRows) return null;
             Persona persona = new Persona();
-            persona.identificacion = (string)dataReader["Identificacion"];
-            persona.nombre = (string)dataReader["Nombre"];
-            persona.sexo = (string)dataReader["Sexo"];
-            persona.edad = (int)dataReader["Edad"];
+            persona.Identificacion = (string)dataReader["Identificacion"];
+            persona.Nombre = (string)dataReader["Nombre"];
+            persona.Sexo = (string)dataReader["Sexo"];
+            persona.Edad = (int)dataReader["Edad"];
             return persona;
         }
         public int Totalizar()
