@@ -72,8 +72,14 @@ namespace Datos
             Persona persona = new Persona();
             persona.Identificacion = (string)dataReader["Identificacion"];
             persona.Nombre = (string)dataReader["Nombre"];
+            persona.Apellidos = (string)dataReader["Apellidos"];
             persona.Sexo = (string)dataReader["Sexo"];
             persona.Edad = (int)dataReader["Edad"];
+            persona.Departamento = (string)dataReader["Departamento"];
+            persona.Ciudad = (string)dataReader["Ciudad"];
+            persona.ValorDeApoyo = (int)dataReader["ValorDeApoyo"];
+            persona.ModalidadDeApoyo = (string)dataReader["ModalidadDeApoyo"];
+            persona.Fecha = (DateTime)dataReader["Fecha"];
             return persona;
         }
         public int Totalizar()
